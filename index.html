@@ -65,25 +65,30 @@
 </head>
 <body>
 
-  <h1>Gwapo ko or dili?</h1>
+  <h1>Gwapo ko?</h1>
   
   <div class="container">
-    <button class="yes" onclick="showMessage('Yes')">Yes</button>
-    <button class="no" onclick="showMessage('no')">No</button>
+    <button class="yes" onclick="showMessage('Yes')">Yes !</button>
+    <button class="no" onclick="showMessage('No')">No !</button>
   </div>
 
   <div class="message" id="message"></div>
-  <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmo3c3l5ODh3ZGN6NHhhaDE2Mjg1ZjkwOXczdDFxbWM3dTBtaW9zaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/9XY4f3FgFTT4QlaYqa/giphy.gif" alt="Cute GIF" id="sticker" class="sticker">
+  <img src="" alt="Response GIF" id="sticker" class="sticker">
 
   <script>
     function showMessage(answer) {
       const messageElement = document.getElementById("message");
       const stickerElement = document.getElementById("sticker");
-      
+
       messageElement.textContent = `You chose: ${answer}`;
       messageElement.style.display = "block";
 
-      // Show the gif sticker after answer is selected
+      if (answer === 'Yes') {
+        stickerElement.src = "https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyb29kd2p6OWE3N3NmMTEybWh3NGF4M2FuMGdueTNkdjF0dzRyMjV4aSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif";
+      } else {
+        stickerElement.src = "https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUycW9pczcxMDRpYXF1ejl2eThlaTJiNW52c3E3eTM1ZjBycmtwZ2xoMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/kcyx4ajxyWRelw1uPJ/giphy.gif";
+      }
+
       stickerElement.style.display = "block";
     }
   </script>
